@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Главная страница
+{% endblock %}
+
+{% block active-index %}
+active
+{% endblock %}
+
+{% block content1 %}
+<!-- для вывода передаваемых параметров используются фигурные скобки. данные передаются из вьюх -->
+<h1>{{ title }}</h1>
+<p>Main Page</p>
+<a href="{% url 'about' %}">about us</a>
+{% endblock %}
+
+{% block content2 %}
+{% for dat in data %}
+<p>{{dat}}</p>
+{% endfor %}
+{% endblock %}
+
+{% block content3 %}
+{{ data2.age }}
+{% endblock %}

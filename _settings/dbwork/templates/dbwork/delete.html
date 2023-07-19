@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Delete News
+{% endblock %}
+
+{% block active-about %}
+active
+{% endblock %}
+
+{% block content1 %}
+<h1>Delete News</h1>
+<p></p>
+<form method="post" class="post-form">
+  {{ form.news_title }}<br>
+<!--  <input type="date" class="form-control me-2" name="news_date"><br>-->
+  <button class="btn btn-outline-success" type="submit">GO!</button>
+<span>{{ error_mess }}</span>
+{% csrf_token %}
+</form>
+{% endblock %}

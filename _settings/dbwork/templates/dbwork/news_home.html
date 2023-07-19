@@ -1,0 +1,27 @@
+{% extends 'dbwork/base.html' %}
+
+{% block title %}
+News Page
+{% endblock %}
+
+{% block active-news %}
+active
+{% endblock %}
+
+{% block content1 %}
+<h1 class="text-center my-5">News Page</h1>
+{% if news %}
+{% for post in news %}
+    <div class="alert alert-primary my-3">
+        <h2 class="text-center">{{ post.news_title }}</h2>
+        <h4>{{ post.news_anounsment }}</h4>
+        <h6>{{ post.news_date }}</h6>
+        <a href="{% url 'new-detail' post.id %}" class="btn">Смотреть целиком</a>
+    </div>
+{% endfor %}
+{% else %}
+<h2>Записей пока еще нет..</h2>
+{% endif %}
+{% endblock %}
+
+{# комментарий #}

@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+Create News
+{% endblock %}
+
+{% block active-about %}
+active
+{% endblock %}
+
+{% block content1 %}
+<h1>Form for adding a new post</h1>
+<p>Fill out all fields bellow to add a new post</p>
+<form method="post" class="post-form">
+  {{ form.news_title }}<br>
+  {{ form.news_anounsment }}<br>
+  {{ form.news_escription }}<br>
+  {{ form.news_date }}<br>
+<!--  <input type="date" class="form-control me-2" name="news_date"><br>-->
+  <button class="btn btn-outline-success" type="submit">GO!</button>
+<span>{{ error_mess }}</span>
+{% csrf_token %}
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'dbwork/base.html' %}
+
+{% block title %}
+{{ article.news_title }}
+{% endblock %}
+
+{% block active-news %}
+active
+{% endblock %}
+
+{% block content1 %}
+<h1 class="text-center my-5">News Page</h1>
+<h2>{{ article.news_title }}</h2>
+<h4>{{ article.news_anounsment }}</h4>
+<h5>{{ article.news_escription }}</h5>
+<h6>{{ article.news_date }}</h6>
+<a href="{% url 'new-delete' article.id %}" class="btn btn-danger">delete a post</a>
+<a href="{% url 'new-update' article.id %}" class="btn btn-info">edit a post</a>
+{% endblock %}
+
+{# комментарий #}
